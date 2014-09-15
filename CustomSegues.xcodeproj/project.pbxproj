@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		5CC492E619C7159F001B88BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC492E519C7159F001B88BB /* AppDelegate.swift */; };
-		5CC492E819C7159F001B88BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC492E719C7159F001B88BB /* ViewController.swift */; };
+		5CC492E819C7159F001B88BB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC492E719C7159F001B88BB /* FirstViewController.swift */; };
 		5CC492EB19C7159F001B88BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CC492E919C7159F001B88BB /* Main.storyboard */; };
 		5CC492ED19C715A0001B88BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CC492EC19C715A0001B88BB /* Images.xcassets */; };
 		5CC492F019C715A0001B88BB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CC492EE19C715A0001B88BB /* LaunchScreen.xib */; };
 		5CC492FC19C715A0001B88BB /* CustomSeguesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC492FB19C715A0001B88BB /* CustomSeguesTests.swift */; };
+		5CC4930619C7167E001B88BB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC4930519C7167E001B88BB /* SecondViewController.swift */; };
+		5CC4930819C7189A001B88BB /* SwipeDownSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC4930719C7189A001B88BB /* SwipeDownSegue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +31,15 @@
 		5CC492E019C7159F001B88BB /* CustomSegues.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomSegues.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC492E419C7159F001B88BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CC492E519C7159F001B88BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5CC492E719C7159F001B88BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5CC492E719C7159F001B88BB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		5CC492EA19C7159F001B88BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5CC492EC19C715A0001B88BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5CC492EF19C715A0001B88BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5CC492F519C715A0001B88BB /* CustomSeguesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomSeguesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC492FA19C715A0001B88BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CC492FB19C715A0001B88BB /* CustomSeguesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSeguesTests.swift; sourceTree = "<group>"; };
+		5CC4930519C7167E001B88BB /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		5CC4930719C7189A001B88BB /* SwipeDownSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeDownSegue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +82,9 @@
 			isa = PBXGroup;
 			children = (
 				5CC492E519C7159F001B88BB /* AppDelegate.swift */,
-				5CC492E719C7159F001B88BB /* ViewController.swift */,
+				5CC492E719C7159F001B88BB /* FirstViewController.swift */,
+				5CC4930519C7167E001B88BB /* SecondViewController.swift */,
+				5CC4930719C7189A001B88BB /* SwipeDownSegue.swift */,
 				5CC492E919C7159F001B88BB /* Main.storyboard */,
 				5CC492EC19C715A0001B88BB /* Images.xcassets */,
 				5CC492EE19C715A0001B88BB /* LaunchScreen.xib */,
@@ -212,7 +218,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CC492E819C7159F001B88BB /* ViewController.swift in Sources */,
+				5CC4930819C7189A001B88BB /* SwipeDownSegue.swift in Sources */,
+				5CC4930619C7167E001B88BB /* SecondViewController.swift in Sources */,
+				5CC492E819C7159F001B88BB /* FirstViewController.swift in Sources */,
 				5CC492E619C7159F001B88BB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
