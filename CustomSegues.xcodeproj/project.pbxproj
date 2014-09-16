@@ -15,6 +15,7 @@
 		5CC492FC19C715A0001B88BB /* CustomSeguesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC492FB19C715A0001B88BB /* CustomSeguesTests.swift */; };
 		5CC4930619C7167E001B88BB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC4930519C7167E001B88BB /* SecondViewController.swift */; };
 		5CC4930819C7189A001B88BB /* SwipeDownSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC4930719C7189A001B88BB /* SwipeDownSegue.swift */; };
+		5CC4930A19C73B23001B88BB /* GrowScaleSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC4930919C73B23001B88BB /* GrowScaleSegue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		5CC492FB19C715A0001B88BB /* CustomSeguesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSeguesTests.swift; sourceTree = "<group>"; };
 		5CC4930519C7167E001B88BB /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		5CC4930719C7189A001B88BB /* SwipeDownSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeDownSegue.swift; sourceTree = "<group>"; };
+		5CC4930919C73B23001B88BB /* GrowScaleSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrowScaleSegue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				5CC492E719C7159F001B88BB /* FirstViewController.swift */,
 				5CC4930519C7167E001B88BB /* SecondViewController.swift */,
 				5CC4930719C7189A001B88BB /* SwipeDownSegue.swift */,
+				5CC4930919C73B23001B88BB /* GrowScaleSegue.swift */,
 				5CC492E919C7159F001B88BB /* Main.storyboard */,
 				5CC492EC19C715A0001B88BB /* Images.xcassets */,
 				5CC492EE19C715A0001B88BB /* LaunchScreen.xib */,
@@ -219,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CC4930819C7189A001B88BB /* SwipeDownSegue.swift in Sources */,
+				5CC4930A19C73B23001B88BB /* GrowScaleSegue.swift in Sources */,
 				5CC4930619C7167E001B88BB /* SecondViewController.swift in Sources */,
 				5CC492E819C7159F001B88BB /* FirstViewController.swift in Sources */,
 				5CC492E619C7159F001B88BB /* AppDelegate.swift in Sources */,

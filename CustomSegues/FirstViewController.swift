@@ -34,7 +34,7 @@ class FirstViewController: UIViewController {
     }
     
     override func segueForUnwindingToViewController(toViewController: UIViewController, fromViewController: UIViewController, identifier: String) -> UIStoryboardSegue {
-        let segue = SwipeDownUnwindSegue(identifier: identifier, source: fromViewController, destination: toViewController)
+        let segue = GrowScaleUnwindSegue(identifier: identifier, source: fromViewController, destination: toViewController)
         return segue
     }
 }
