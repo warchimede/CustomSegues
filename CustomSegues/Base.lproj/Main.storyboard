@@ -61,7 +61,7 @@
                         </variation>
                     </view>
                     <connections>
-                        <segue destination="dLp-eK-fIU" kind="custom" identifier="CustomSegue" customClass="GrowScaleSegue" customModule="CustomSegues" customModuleProvider="target" id="ovc-gV-THB"/>
+                        <segue destination="dLp-eK-fIU" kind="custom" identifier="CustomSegue" customClass="CustomSegue" customModule="CustomSegues" customModuleProvider="target" id="ovc-gV-THB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
