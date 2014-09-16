@@ -23,7 +23,7 @@ class FirstViewController: UIViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue is CustomSegue {
-            (segue as CustomSegue).animationType = .GrowScale
+            (segue as CustomSegue).animationType = .SwipeDown
         }
     }
     
@@ -37,7 +37,7 @@ class FirstViewController: UIViewController {
     
     override func segueForUnwindingToViewController(toViewController: UIViewController, fromViewController: UIViewController, identifier: String) -> UIStoryboardSegue {
         let segue = CustomUnwindSegue(identifier: identifier, source: fromViewController, destination: toViewController)
-        segue.animationType = .GrowScale
+        segue.animationType = .SwipeDown
         return segue
     }
 }

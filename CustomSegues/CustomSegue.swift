@@ -16,6 +16,7 @@ enum CustomSegueAnimation {
     case CornerRotate
 }
 
+// MARK: Segue class
 class CustomSegue: UIStoryboardSegue {
     
     var animationType: CustomSegueAnimation = .Push
@@ -34,7 +35,26 @@ class CustomSegue: UIStoryboardSegue {
     }
     
     private func animatePush() {
+        let toViewController: UIViewController = self.destinationViewController as UIViewController
+        let fromViewController: UIViewController = self.sourceViewController as UIViewController
         
+        let containerView: UIView? = fromViewController.view.superview
+        let screenBounds: CGRect = UIScreen.mainScreen().bounds
+        
+        let finalToFrame: CGRect = screenBounds
+        let finalFromFrame: CGRect = CGRectOffset(finalToFrame, -screenBounds.size.width, 0)
+        
+        toViewController.view.frame = CGRectOffset(finalToFrame, screenBounds.size.width, 0)
+        containerView?.addSubview(toViewController.view)
+        
+        UIView.animateWithDuration(0.5, animations: {
+            toViewController.view.frame = finalToFrame
+            fromViewController.view.frame = finalFromFrame
+            }, completion: { finished in
+                let fromVC: UIViewController = self.sourceViewController as UIViewController
+                let toVC: UIViewController = self.destinationViewController as UIViewController
+                fromVC.presentViewController(toVC, animated: false, completion: nil)
+        })
     }
     
     private func animateSwipeDown() {
@@ -107,6 +127,7 @@ class CustomSegue: UIStoryboardSegue {
     }
 }
 
+// MARK: Unwind Segue class
 class CustomUnwindSegue: UIStoryboardSegue {
     
     var animationType: CustomSegueAnimation = .Push
@@ -125,7 +146,26 @@ class CustomUnwindSegue: UIStoryboardSegue {
     }
     
     private func animatePush() {
+        let toViewController: UIViewController = self.destinationViewController as UIViewController
+        let fromViewController: UIViewController = self.sourceViewController as UIViewController
         
+        let containerView: UIView? = fromViewController.view.superview
+        let screenBounds: CGRect = UIScreen.mainScreen().bounds
+        
+        let finalToFrame: CGRect = screenBounds
+        let finalFromFrame: CGRect = CGRectOffset(finalToFrame, screenBounds.size.width, 0)
+        
+        toViewController.view.frame = CGRectOffset(finalToFrame, -screenBounds.size.width, 0)
+        containerView?.addSubview(toViewController.view)
+        
+        UIView.animateWithDuration(0.5, animations: {
+            toViewController.view.frame = finalToFrame
+            fromViewController.view.frame = finalFromFrame
+            }, completion: { finished in
+                let fromVC: UIViewController = self.sourceViewController as UIViewController
+                let toVC: UIViewController = self.destinationViewController as UIViewController
+                fromVC.dismissViewControllerAnimated(false, completion: nil)
+        })
     }
     
     private func animateSwipeDown() {
