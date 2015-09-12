@@ -23,12 +23,12 @@ class FirstViewController: UIViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue is CustomSegue {
-            (segue as! CustomSegue).animationType = .SwipeDown
+            (segue as! CustomSegue).animationType = .Push
         }
     }
     
     @IBAction func go() {
-        self.performSegueWithIdentifier("CustomSegue", sender: nil)
+        performSegueWithIdentifier("CustomSegue", sender: nil)
     }
     
     @IBAction func unwindFromViewController(sender: UIStoryboardSegue) {
@@ -37,9 +37,8 @@ class FirstViewController: UIViewController {
     
     override func segueForUnwindingToViewController(toViewController: UIViewController, fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue {
         let segue = CustomUnwindSegue(identifier: identifier, source: fromViewController, destination: toViewController)
-        segue.animationType = .SwipeDown
+        segue.animationType = .Push
         return segue
     }
     
 }
-

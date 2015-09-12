@@ -19,7 +19,7 @@ enum CustomSegueAnimation {
 // MARK: Segue class
 class CustomSegue: UIStoryboardSegue {
     
-    var animationType: CustomSegueAnimation = .Push
+    var animationType = CustomSegueAnimation.Push
     
     override func perform() {
         switch animationType {
@@ -35,14 +35,14 @@ class CustomSegue: UIStoryboardSegue {
     }
     
     private func animatePush() {
-        let toViewController: UIViewController = self.destinationViewController as UIViewController
-        let fromViewController: UIViewController = self.sourceViewController as UIViewController
+        let toViewController = destinationViewController
+        let fromViewController = sourceViewController
         
-        let containerView: UIView? = fromViewController.view.superview
-        let screenBounds: CGRect = UIScreen.mainScreen().bounds
+        let containerView = fromViewController.view.superview
+        let screenBounds = UIScreen.mainScreen().bounds
         
-        let finalToFrame: CGRect = screenBounds
-        let finalFromFrame: CGRect = CGRectOffset(finalToFrame, -screenBounds.size.width, 0)
+        let finalToFrame = screenBounds
+        let finalFromFrame = CGRectOffset(finalToFrame, -screenBounds.size.width, 0)
         
         toViewController.view.frame = CGRectOffset(finalToFrame, screenBounds.size.width, 0)
         containerView?.addSubview(toViewController.view)
@@ -51,21 +51,21 @@ class CustomSegue: UIStoryboardSegue {
             toViewController.view.frame = finalToFrame
             fromViewController.view.frame = finalFromFrame
             }, completion: { finished in
-                let fromVC: UIViewController = self.sourceViewController as UIViewController
-                let toVC: UIViewController = self.destinationViewController as UIViewController
+                let fromVC = self.sourceViewController
+                let toVC = self.destinationViewController
                 fromVC.presentViewController(toVC, animated: false, completion: nil)
         })
     }
     
     private func animateSwipeDown() {
-        let toViewController: UIViewController = self.destinationViewController as UIViewController
-        let fromViewController: UIViewController = self.sourceViewController as UIViewController
+        let toViewController = destinationViewController
+        let fromViewController = sourceViewController
         
-        let containerView: UIView? = fromViewController.view.superview
-        let screenBounds: CGRect = UIScreen.mainScreen().bounds
+        let containerView = fromViewController.view.superview
+        let screenBounds = UIScreen.mainScreen().bounds
         
-        let finalToFrame: CGRect = screenBounds
-        let finalFromFrame: CGRect = CGRectOffset(finalToFrame, 0, screenBounds.size.height)
+        let finalToFrame = screenBounds
+        let finalFromFrame = CGRectOffset(finalToFrame, 0, screenBounds.size.height)
         
         toViewController.view.frame = CGRectOffset(finalToFrame, 0, -screenBounds.size.height)
         containerView?.addSubview(toViewController.view)
@@ -74,18 +74,18 @@ class CustomSegue: UIStoryboardSegue {
             toViewController.view.frame = finalToFrame
             fromViewController.view.frame = finalFromFrame
             }, completion: { finished in
-                let fromVC: UIViewController = self.sourceViewController as UIViewController
-                let toVC: UIViewController = self.destinationViewController as UIViewController
+                let fromVC = self.sourceViewController
+                let toVC = self.destinationViewController
                 fromVC.presentViewController(toVC, animated: false, completion: nil)
         })
     }
     
     private func animateGrowScale() {
-        let toViewController: UIViewController = self.destinationViewController as UIViewController
-        let fromViewController: UIViewController = self.sourceViewController as UIViewController
+        let toViewController = destinationViewController
+        let fromViewController = sourceViewController
         
-        let containerView: UIView? = fromViewController.view.superview
-        let originalCenter: CGPoint = fromViewController.view.center
+        let containerView = fromViewController.view.superview
+        let originalCenter = fromViewController.view.center
         
         toViewController.view.transform = CGAffineTransformMakeScale(0.05, 0.05)
         toViewController.view.center = originalCenter
@@ -95,15 +95,15 @@ class CustomSegue: UIStoryboardSegue {
         UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
             toViewController.view.transform = CGAffineTransformMakeScale(1.0, 1.0)
             }, completion: { finished in
-                let fromVC: UIViewController = self.sourceViewController as UIViewController
-                let toVC: UIViewController = self.destinationViewController as UIViewController
+                let fromVC = self.sourceViewController
+                let toVC = self.destinationViewController
                 fromVC.presentViewController(toVC, animated: false, completion: nil)
         })
     }
     
     private func animateCornerRotate() {
-        let toViewController: UIViewController = self.destinationViewController as UIViewController
-        let fromViewController: UIViewController = self.sourceViewController as UIViewController
+        let toViewController = destinationViewController
+        let fromViewController = sourceViewController
         
         toViewController.view.layer.anchorPoint = CGPointZero
         fromViewController.view.layer.anchorPoint = CGPointZero
@@ -118,9 +118,9 @@ class CustomSegue: UIStoryboardSegue {
         UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.TransitionNone, animations: {
             fromViewController.view.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
             toViewController.view.transform = CGAffineTransformIdentity
-            }, completion: {finished in
-                let fromVC: UIViewController = self.sourceViewController as UIViewController
-                let toVC: UIViewController = self.destinationViewController as UIViewController
+            }, completion: { finished in
+                let fromVC: UIViewController = self.sourceViewController
+                let toVC: UIViewController = self.destinationViewController
                 fromVC.presentViewController(toVC, animated: false, completion: nil)
         })
     }
@@ -145,14 +145,14 @@ class CustomUnwindSegue: UIStoryboardSegue {
     }
     
     private func animatePush() {
-        let toViewController: UIViewController = self.destinationViewController as UIViewController
-        let fromViewController: UIViewController = self.sourceViewController as UIViewController
+        let toViewController = destinationViewController
+        let fromViewController = sourceViewController
         
-        let containerView: UIView? = fromViewController.view.superview
-        let screenBounds: CGRect = UIScreen.mainScreen().bounds
+        let containerView = fromViewController.view.superview
+        let screenBounds = UIScreen.mainScreen().bounds
         
-        let finalToFrame: CGRect = screenBounds
-        let finalFromFrame: CGRect = CGRectOffset(finalToFrame, screenBounds.size.width, 0)
+        let finalToFrame = screenBounds
+        let finalFromFrame = CGRectOffset(finalToFrame, screenBounds.size.width, 0)
         
         toViewController.view.frame = CGRectOffset(finalToFrame, -screenBounds.size.width, 0)
         containerView?.addSubview(toViewController.view)
@@ -161,20 +161,20 @@ class CustomUnwindSegue: UIStoryboardSegue {
             toViewController.view.frame = finalToFrame
             fromViewController.view.frame = finalFromFrame
             }, completion: { finished in
-                let fromVC: UIViewController = self.sourceViewController as UIViewController
+                let fromVC: UIViewController = self.sourceViewController
                 fromVC.dismissViewControllerAnimated(false, completion: nil)
         })
     }
     
     private func animateSwipeDown() {
-        let toViewController: UIViewController = self.destinationViewController as UIViewController
-        let fromViewController: UIViewController = self.sourceViewController as UIViewController
+        let toViewController = destinationViewController
+        let fromViewController = sourceViewController
         
-        let containerView: UIView? = fromViewController.view.superview
-        let screenBounds: CGRect = UIScreen.mainScreen().bounds
+        let containerView = fromViewController.view.superview
+        let screenBounds = UIScreen.mainScreen().bounds
         
-        let finalToFrame: CGRect = screenBounds
-        let finalFromFrame: CGRect = CGRectOffset(finalToFrame, 0, -screenBounds.size.height)
+        let finalToFrame = screenBounds
+        let finalFromFrame = CGRectOffset(finalToFrame, 0, -screenBounds.size.height)
         
         toViewController.view.frame = CGRectOffset(finalToFrame, 0, screenBounds.size.height)
         containerView?.addSubview(toViewController.view)
@@ -183,28 +183,28 @@ class CustomUnwindSegue: UIStoryboardSegue {
             toViewController.view.frame = finalToFrame
             fromViewController.view.frame = finalFromFrame
             }, completion: { finished in
-                let fromVC: UIViewController = self.sourceViewController as UIViewController
+                let fromVC: UIViewController = self.sourceViewController
                 fromVC.dismissViewControllerAnimated(false, completion: nil)
         })
     }
     
     private func animateGrowScale() {
-        let toViewController: UIViewController = self.destinationViewController as UIViewController
-        let fromViewController: UIViewController = self.sourceViewController as UIViewController
+        let toViewController = destinationViewController
+        let fromViewController = sourceViewController
         
         fromViewController.view.superview?.insertSubview(toViewController.view, atIndex: 0)
         
         UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
             fromViewController.view.transform = CGAffineTransformMakeScale(0.05, 0.05)
             }, completion: { finished in
-                let fromVC: UIViewController = self.sourceViewController as UIViewController
+                let fromVC = self.sourceViewController
                 fromVC.dismissViewControllerAnimated(false, completion: nil)
         })
     }
     
     private func animateCornerRotate() {
-        let toViewController: UIViewController = self.destinationViewController as UIViewController
-        let fromViewController: UIViewController = self.sourceViewController as UIViewController
+        let toViewController = destinationViewController
+        let fromViewController = sourceViewController
         
         toViewController.view.layer.anchorPoint = CGPointZero
         fromViewController.view.layer.anchorPoint = CGPointZero
@@ -212,14 +212,14 @@ class CustomUnwindSegue: UIStoryboardSegue {
         toViewController.view.layer.position = CGPointZero
         fromViewController.view.layer.position = CGPointZero
         
-        let containerView: UIView? = fromViewController.view.superview
+        let containerView = fromViewController.view.superview
         containerView?.addSubview(toViewController.view)
         
         UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.TransitionNone, animations: {
             fromViewController.view.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
             toViewController.view.transform = CGAffineTransformIdentity
-            }, completion: {finished in
-                let fromVC: UIViewController = self.sourceViewController as UIViewController
+            }, completion: { finished in
+                let fromVC = self.sourceViewController
                 fromVC.dismissViewControllerAnimated(false, completion: nil)
         })
 
