@@ -115,7 +115,7 @@ class CustomSegue: UIStoryboardSegue {
         toViewController.view.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
         containerView?.addSubview(toViewController.view)
         
-        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.8, options: nil, animations: {
+        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.TransitionNone, animations: {
             fromViewController.view.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
             toViewController.view.transform = CGAffineTransformIdentity
             }, completion: {finished in
@@ -123,7 +123,6 @@ class CustomSegue: UIStoryboardSegue {
                 let toVC: UIViewController = self.destinationViewController as UIViewController
                 fromVC.presentViewController(toVC, animated: false, completion: nil)
         })
-
     }
 }
 
@@ -163,7 +162,6 @@ class CustomUnwindSegue: UIStoryboardSegue {
             fromViewController.view.frame = finalFromFrame
             }, completion: { finished in
                 let fromVC: UIViewController = self.sourceViewController as UIViewController
-                let toVC: UIViewController = self.destinationViewController as UIViewController
                 fromVC.dismissViewControllerAnimated(false, completion: nil)
         })
     }
@@ -186,7 +184,6 @@ class CustomUnwindSegue: UIStoryboardSegue {
             fromViewController.view.frame = finalFromFrame
             }, completion: { finished in
                 let fromVC: UIViewController = self.sourceViewController as UIViewController
-                let toVC: UIViewController = self.destinationViewController as UIViewController
                 fromVC.dismissViewControllerAnimated(false, completion: nil)
         })
     }
@@ -201,7 +198,6 @@ class CustomUnwindSegue: UIStoryboardSegue {
             fromViewController.view.transform = CGAffineTransformMakeScale(0.05, 0.05)
             }, completion: { finished in
                 let fromVC: UIViewController = self.sourceViewController as UIViewController
-                let toVC: UIViewController = self.destinationViewController as UIViewController
                 fromVC.dismissViewControllerAnimated(false, completion: nil)
         })
     }
@@ -219,12 +215,11 @@ class CustomUnwindSegue: UIStoryboardSegue {
         let containerView: UIView? = fromViewController.view.superview
         containerView?.addSubview(toViewController.view)
         
-        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.8, options: nil, animations: {
+        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.TransitionNone, animations: {
             fromViewController.view.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
             toViewController.view.transform = CGAffineTransformIdentity
             }, completion: {finished in
                 let fromVC: UIViewController = self.sourceViewController as UIViewController
-                let toVC: UIViewController = self.destinationViewController as UIViewController
                 fromVC.dismissViewControllerAnimated(false, completion: nil)
         })
 

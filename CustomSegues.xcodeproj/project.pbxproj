@@ -162,6 +162,7 @@
 		5CC492D819C7159F001B88BB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = HoodBrains;
 				TargetAttributes = {
