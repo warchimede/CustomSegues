@@ -1,7 +1,11 @@
-CustomSegues
-============
+# CustomSegues
+
+[![CI Status](https://img.shields.io/travis/warchimede/CustomSegues.svg?style=flat)](https://travis-ci.org/warchimede/CustomSegues)
+[![License](https://img.shields.io/cocoapods/l/CellAnimator.svg?style=flat)](http://cocoapods.org/pods/CellAnimator)
+[![Platform](https://img.shields.io/cocoapods/p/CellAnimator.svg?style=flat)](http://cocoapods.org/pods/CellAnimator)
 
 ## Summary
+
 Custom segues with cool animations in Swift
 
 ## Use
