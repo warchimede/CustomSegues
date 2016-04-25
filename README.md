@@ -9,6 +9,7 @@
 Custom segues with cool animations in Swift
 
 ## Use
+
 Drag the **CustomSegue.swift** file into your project.
 
 Then, set up a custom segue between two **UIViewController** in your **UIStoryboard** (don't forget the exit segue !).
@@ -30,6 +31,7 @@ override func segueForUnwindingToViewController(toViewController: UIViewControll
 
 
 ## Configuration
+
 Here are the currently available transforms you can use to customize the animation
 of your custom segue :
 
@@ -39,6 +41,7 @@ of your custom segue :
   + `CornerRotate`
 
 ## License
+
 This control was made available under the MIT License
 
 If you use it and like it, let me know: [@warchimede](http://twitter.com/warchimede)
