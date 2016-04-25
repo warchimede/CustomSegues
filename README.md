@@ -26,6 +26,8 @@ override func segueForUnwindingToViewController(toViewController: UIViewControll
     segue.animationType = .SwipeDown
     return segue
 }
+```
+
 
 ## Configuration
 Here are the currently available transforms you can use to customize the animation
