@@ -10,22 +10,22 @@ import UIKit
 
 class FirstViewController: UIViewController {
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue is CustomSegue {
-            (segue as! CustomSegue).animationType = .Push
+            (segue as! CustomSegue).animationType = .push
         }
     }
     
     @IBAction func go() {
-        performSegueWithIdentifier("CustomSegue", sender: nil)
+        performSegue(withIdentifier: "CustomSegue", sender: nil)
     }
     
-    @IBAction func unwindFromViewController(sender: UIStoryboardSegue) {
+    @IBAction func unwindFromViewController(_ sender: UIStoryboardSegue) {
     }
     
-    override func segueForUnwindingToViewController(toViewController: UIViewController, fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue {
+    override func segueForUnwinding(to toViewController: UIViewController, from fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue {
         let segue = CustomUnwindSegue(identifier: identifier, source: fromViewController, destination: toViewController)
-        segue.animationType = .Push
+        segue.animationType = .push
         return segue
     }
     
